@@ -1,8 +1,11 @@
 const express = require('express');
 const path = require('path');
+const loginRouter = require('./routes/login')
 const app = express();
 
 app.use(express.static('public'));
+
+app.use('/login', loginRouter);
 
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
