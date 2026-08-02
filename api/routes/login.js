@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
 const loginController = require('../controller/loginController');
+const loginService = require()
 const router = express().router;
 
 router.get('/', (req, res)=>{
-    res.sendFile('../api/public/login.html');
+    res.sendFile('../public/login.html');
 })
 
 router.post('/', (req, res)=> {
