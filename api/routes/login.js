@@ -4,7 +4,7 @@ const loginController = require('../controller/loginController');
 const router = express().router;
 
 router.get('/', (req, res)=>{
-    res.sendFile('../public/login.html');
+    res.sendFile(path.join(__dirname, '../public/login.html'));
 })
 
 router.post('/', (req, res)=> {
