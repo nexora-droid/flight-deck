@@ -22,7 +22,6 @@
     --text-6xl--line-height: 1;
     --font-weight-normal: 400;
     --radius-2xl: 1rem;
-    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -213,9 +212,6 @@
   .rotate-10 {
     rotate: 10deg;
   }
-  .animate-\[fall\] {
-    animation: fall;
-  }
   .flex-col {
     flex-direction: column;
   }
@@ -311,24 +307,6 @@
   .italic {
     font-style: italic;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .decoration-wavy {
-    text-decoration-style: wavy;
-  }
-  .underline-offset-1 {
-    text-underline-offset: 1px;
-  }
-  .underline-offset-2 {
-    text-underline-offset: 2px;
-  }
-  .underline-offset-4 {
-    text-underline-offset: 4px;
-  }
-  .underline-offset-auto {
-    text-underline-offset: auto;
-  }
   .transition-all {
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -341,10 +319,6 @@
   .duration-400 {
     --tw-duration: 400ms;
     transition-duration: 400ms;
-  }
-  .ease-in-out {
-    --tw-ease: var(--ease-in-out);
-    transition-timing-function: var(--ease-in-out);
   }
   @media (hover: hover) {
     .hover\:scale-110:hover {
@@ -361,12 +335,6 @@
     }
     .hover\:text-blue-600:hover {
       color: var(--color-blue-600);
-    }
-    .hover\:underline-offset-4:hover {
-      text-underline-offset: 4px;
-    }
-    .hover\:underline-offset-8:hover {
-      text-underline-offset: 8px;
     }
   }
   @media (prefers-color-scheme: dark) {
@@ -406,10 +374,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-ease {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-scale-x {
   syntax: "*";
   inherits: false;
@@ -431,7 +395,6 @@
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-duration: initial;
-      --tw-ease: initial;
       --tw-scale-x: 1;
       --tw-scale-y: 1;
       --tw-scale-z: 1;

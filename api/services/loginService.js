@@ -8,19 +8,23 @@ const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY;
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
 
-function signUpUser(email, password) {
-    const { data, error } = client.auth.signUp({
+async function signUpUser(email, password) {
+    const { data, error } = await client.auth.signUp({
         email: email,
         password: password,
         // options: {
             // emailRedirectTo: 'http://localhost:4000/dashboard'
         // }
     })
+    return { data, error };
 }
  
-function signInUser(email, password) {
-    const { data, error } = client.auth.signUp({
+async function signInUser(email, password) {
+    const { data, error } = await client.auth.signInWithPassword({
         email: email,
         password: password
     })
+    return { data, error };
 }
+
+module.exports = {signInUser, signUpUser};

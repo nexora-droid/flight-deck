@@ -2,6 +2,12 @@ const express = require('express');
 const path = require('path');
 const loginRouter = require('./routes/login')
 const app = express();
+const PORT = process.env.PORT || 4000;
+
+app.use((req, res, next)=>{
+    console.log(`${req.method} ${req.url}`);
+    next();
+});
 
 app.use(express.static('public'));
 
@@ -11,7 +17,7 @@ app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
-app.listen(4000, ()=>{
+app.listen(PORT, ()=>{
     console.log('Server is running');
 })
 
