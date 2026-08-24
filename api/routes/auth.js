@@ -1,14 +1,12 @@
 const express = require('express');
 const path = require('path');
-const loginController = require('../controller/loginController');
-const router = express().router;
+const authController = require('../controller/authController');
+const router = express.router();
 
 router.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, '../public/login.html'));
 })
 
-router.post('/', (req, res)=> {
-    loginController.addUser();
-})
+router.post('/signup', authController.addUser);
 
 module.exports = router;

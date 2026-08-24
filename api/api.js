@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const loginRouter = require('./routes/login')
+const authRouter = require('./routes/auth')
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -9,9 +9,10 @@ app.use((req, res, next)=>{
     next();
 });
 
+app.use(express.json());
 app.use(express.static('public'));
 
-app.use('/login', loginRouter);
+app.use('/auth', authRouter);
 
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
