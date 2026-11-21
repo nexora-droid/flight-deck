@@ -3,7 +3,7 @@
 @import "tailwindcss";
 @font-face {
     font-family: 'Zarathustra';
-    src: url(/api/public/zarathustra/ZAR_font/zarathustra-v01.otf) format('opentype');
+    src: url('/zara/ZAR_font/zarathustra-v01.otf') format('opentype');
 }
 
 @theme {
