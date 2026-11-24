@@ -9,9 +9,9 @@
 <body class="bg-[#F6EFE1] dark:bg-[#000000] text-black dark:text-white mt-5">
     <section class="w-full h-full flex flex-col justify-items-start">
         <nav class="flex-row justify-evenly h-[10%] w-screen">
-            <div class="flex flex-row items-center justify-between gap-20 text-2xl font-spectral font-normal h-[10%] w-screen">
+            <div class="flex flex-row items-center justify-between gap-20 md:text-2xl sm:text-lg text-xs font-spectral font-normal h-[10%] w-screen">
                 <div class="ml-10 font-zarathustra">Flight Deck</div>
-                <div class="flex flex-row items-center justify-end gap-18 text-2xl mr-10 font-bricolage font-semibold">
+                <div class="flex flex-row items-center justify-end gap-18 md:text-2xl sm:text-lg text-xs mr-10 font-bricolage font-semibold">
                     <p>Getting Started</p>
                     <p>Docs</p>
                     <p>Support</p>
@@ -23,11 +23,11 @@
             <div class="flex flex-row-reverse items-center justify-center w-screen h-full pl-20 pr-10">
                 <div class="flex flex-col justify-center-safe w-[60%] border-solid border-black dark:border-white border-2 rounded-4xl shadow-[7px_7px_0px_#000000] dark:shadow-[7px_7px_0px_#F6EFE1]">
                     <div class="flex flex-row font-bricolage font-bold justify-evenly items-center w-full mt-12 text-lg">
-                        <button class="w-30 h-12 horizons-shadow bg-transparent focus:bg-[#FFA936]" id="signUp">Sign Up</button>
-                    <button class="w-30 h-12 horizons-shadow" id="signIn">Sign In</button>
+                        <button class="w-30 h-12 horizons-shadow bg-transparent focus:bg-[#ffa936] focus:outline-0" id="signUp">Sign Up</button>
+                        <button class="w-30 h-12 horizons-shadow bg-transparent focus:bg-[#ffa936] focus:outline-0" id="signIn">Sign In</button>
                     </div>
                     <p class="font-bricolage text-2xl font-bold w-full pl-10 pr-20 mt-5" id="welcomeMsg">Create a new account</p>
-                    <form class="flex flex-col gap-2.5 items-center w-full pl-10 pr-10 pb-10 pt-5  font-bricolage text-lg font-bold" id="accountform">
+                    <form class="flex flex-col gap-2.5 items-center w-full pl-10 pr-10 pb-10 pt-5  font-bricolage text-lg font-bold" id="newAccountForm" hidden>
                         <label for="email" class="w-full text-left">Enter your email address: </label>
                         <input type="email" placeholder="john.doe@flightdeck.com" id="email" name="email" class="login-input" required>
                         <label for="password" class="w-full text-left" >Enter a password:</label>
@@ -36,15 +36,22 @@
                         <label for="confirmPassword" class="w-full text-left" >Confirm password:</label>
                         <input type="password" placeholder="********" id="confirmPassword" name="confirm-password" class="login-input" required>
                         <p class="text-red-400 text-base text-left w-full" id="passwordMatch">Passwords do not match.</p>
-                        <input type="submit" class="border-2 border-solid bg-[#46467C] border-[#46467C] text-white hover:bg-transparent hover:text-blue-600 rounded-2xl p-2 w-full mt-5 duration-450 transition-all ease-in-out" id="submit">
+                        <button type="submit" class="border-2 border-solid bg-[#46467C] border-[#46467C] text-white hover:bg-transparent hover:text-blue-600 rounded-2xl p-2 w-full mt-5 duration-450 transition-all ease-in-out" id="submit">Sign Up</button>
+                    </form>
+                    <form class="flex flex-col gap-2.5 items-center w-full pl-10 pr-10 pb-10 pt-5  font-bricolage text-lg font-bold" id="loginForm">
+                        <label for="email" class="w-full text-left">Enter your email address: </label>
+                        <input type="email" placeholder="john.doe@flightdeck.com" id="email" name="email" class="login-input" required>
+                        <label for="password" class="w-full text-left" >Enter a password:</label>
+                        <input type="password" placeholder="********" id="password" name="password" class="login-input" required>
+                        <button type="submit" class="border-2 border-solid bg-[#46467C] border-[#46467C] text-white hover:bg-transparent hover:text-blue-600 rounded-2xl p-2 w-full mt-5 duration-450 transition-all ease-in-out" id="submit">Sign Up</button>
                     </form>
                 </div>
                 
                 <div class="w-full flex flex-col items-start mr-16">
-                    <p class="font-zarathustra text-6xl">Flight Deck</p>
-                    <p class="font-bricolage text-3xl mt-10 font-normal">100% Open Source <br> Tons of useful plane APIs - <span class="font-black">all in one place</span></p>
-                    <p class="font-bricolage text-3xl mt-4 font-normal">Collect all kinds of data, like: </p>
-                    <ul class="list-disc font-bricolage font-normal text-3xl mt-4 ml-20l">
+                    <p class="font-zarathustra md:text-5xl text-2xl">Flight Deck</p>
+                    <p class="font-bricolage md:text-3xl sm:text-2xltext-xl mt-10 font-normal">100% Open Source <br> Tons of useful plane APIs - <span class="font-black">all in one place</span></p>
+                    <p class="font-bricolage md:text-3xl sm:text-2xl text-xl mt-4 font-normal">Collect all kinds of data, like: </p>
+                    <ul class="list-disc font-bricolage font-normal md:text-3xl sm:text-2xl text-xl mt-4 ml-20l">
                         <li>METAR of any airport</li>
                         <li>Flights departing and arriving</li>
                     </ul>

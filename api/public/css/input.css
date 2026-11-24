@@ -22,3 +22,7 @@
 .login-input {
     @apply w-full text-left border-2 border-solid text-black dark:text-white border-black dark:border-white transition-all focus:border-black dark:focus:border-[#F86E95] focus:shadow-[3px_3px_1px_#000000] focus:text-[#F86E95] ease-in-out duration-400 p-2 rounded-2xl focus:outline-none;
 }
+
+.login-focus {
+    @apply bg-[#FFA936];
+}
